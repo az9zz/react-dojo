@@ -1,0 +1,86 @@
+// src/leetcode/easy/001-two-sum/index.tsx
+import React, { useState } from 'react'
+import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
+import { twoSum } from './solution' // 导入核心算法
+
+const { Title, Paragraph } = Typography
+
+export const TwoSumComponent: React.FC = () => {
+  const [form] = Form.useForm()
+  const [result, setResult] = useState<number[] | null>(null)
+  const [error, setError] = useState<string>('')
+
+  const handleRun = (values: { nums: string; target: string }) => {
+    try {
+      setError('')
+      setResult(null)
+
+      // 1. 解析和校验输入
+      const nums = values.nums.split(',').map((s) => {
+        const num = parseInt(s.trim(), 10)
+        if (isNaN(num)) throw new Error('数组输入包含非数字字符')
+        return num
+      })
+
+      const target = parseInt(values.target.trim(), 10)
+      if (isNaN(target)) throw new Error('目标值必须是数字')
+
+      // 2. 调用核心算法
+      const solutionResult = twoSum(nums, target)
+
+      // 3. 更新结果状态
+      if (solutionResult.length === 2) {
+        setResult(solutionResult)
+      } else {
+        setError('未找到符合条件的两个数。')
+      }
+    } catch (e: any) {
+      setError(e.message || '输入格式错误，请检查。')
+    }
+  }
+
+  return (
+    <Card title="1. 两数之和 (Two Sum)">
+      <Paragraph>
+        给定一个整数数组 `nums` 和一个目标值
+        `target`，请找出和为目标值的两个整数，并返回它们的数组下标。
+      </Paragraph>
+      <Form
+        form={form}
+        onFinish={handleRun}
+        layout="vertical"
+        initialValues={{ nums: '2, 7, 11, 15', target: '9' }}
+      >
+        <Form.Item
+          name="nums"
+          label="数组 nums"
+          rules={[{ required: true, message: '请输入数组' }]}
+        >
+          <Input placeholder="例如: 2, 7, 11, 15" />
+        </Form.Item>
+        <Form.Item
+          name="target"
+          label="目标值 target"
+          rules={[{ required: true, message: '请输入目标值' }]}
+        >
+          <Input placeholder="例如: 9" />
+        </Form.Item>
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            运行代码
+          </Button>
+        </Form.Item>
+      </Form>
+
+      {(result || error) && (
+        <Space direction="vertical" style={{ width: '100%' }}>
+          <Divider>运行结果</Divider>
+          {result && (
+            <Alert message={`成功！找到下标: [${result.join(', ')}]`} type="success" showIcon />
+          )}
+          {error && <Alert message={error} type="error" showIcon />}
+        </Space>
+      )}
+    </Card>
+  )
+}
