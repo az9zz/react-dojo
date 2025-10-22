@@ -1,22 +1,28 @@
 // src/pages/LeetCodePage/index.tsx
 import React from 'react'
 import { Typography, Divider } from 'antd'
-// import { TwoSumComponent } from '../../leetcode/easy/001-two-sum' // 引入我们之前创建的组件
+
+// 1. 导入 easy 题解
+import { TwoSumComponent } from '../../leetcode/easy/001-two-sum'
+// 2. 导入 medium 题解
+import { LongestSubstringComponent } from '../../leetcode/medium/003-longest-substring-without-repeating-characters'
 
 const { Title } = Typography
 
-// 确保你已经创建了 TwoSumComponent
 const LeetCodePage: React.FC = () => {
   return (
     <div>
       <Title level={2}>LeetCode 算法题解</Title>
-      <Divider />
 
-      {/* 每完成一道题，就在这里引入并展示 */}
-      {/* <TwoSumComponent /> */}
+      <Divider orientation="left">Easy</Divider>
+      <TwoSumComponent />
 
-      {/* <Divider /> */}
-      {/* <AnotherLeetCodeComponent /> */}
+      {/* 3. 添加新的分类和组件 */}
+      <Divider orientation="left">Medium</Divider>
+      <LongestSubstringComponent />
+
+      {/* 以后有 hard 的题了，可以这样组织 */}
+      {/* <Divider orientation="left">Hard</Divider> */}
     </div>
   )
 }
