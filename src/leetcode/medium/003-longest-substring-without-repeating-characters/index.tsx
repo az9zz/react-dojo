@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { lengthOfLongestSubstring } from './solution'
 
-const { Title, Paragraph } = Typography
+const { Paragraph } = Typography
 
 export const LongestSubstringComponent: React.FC = () => {
   const [form] = Form.useForm()

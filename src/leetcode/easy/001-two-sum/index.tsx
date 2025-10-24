@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { twoSum } from './solution' // 导入核心算法
 
-const { Title, Paragraph } = Typography
+const { Paragraph } = Typography
 
 export const TwoSumComponent: React.FC = () => {
   const [form] = Form.useForm()
@@ -34,8 +34,15 @@ export const TwoSumComponent: React.FC = () => {
       } else {
         setError('未找到符合条件的两个数。')
       }
-    } catch (e: any) {
-      setError(e.message || '输入格式错误，请检查。')
+    } catch (e: unknown) {
+      // 1. 将类型从 any 改为 unknown
+      // 2. 使用类型守卫检查 e 是否是一个 Error 对象实例
+      if (e instanceof Error) {
+        setError(e.message) // 如果是，我们可以安全地访问它的 message 属性
+      } else {
+        // 3. 如果它不是 Error 对象（比如有人 throw 'a string'），我们给一个通用错误
+        setError('发生了一个未知错误，请检查输入格式。')
+      }
     }
   }
 
