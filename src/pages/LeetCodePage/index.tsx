@@ -2,10 +2,11 @@
 import React from 'react'
 import { Typography, Divider } from 'antd'
 
-// 1. 导入 easy 题解
+// 导入 easy 题解
 import { TwoSumComponent } from '../../leetcode/easy/001-two-sum'
-// 2. 导入 medium 题解
+// 导入 medium 题解
 import { LongestSubstringComponent } from '../../leetcode/medium/003-longest-substring-without-repeating-characters'
+import { MergeIntervalsComponent } from '../../leetcode/medium/056-merge-intervals' // 1. 新增导入
 
 const { Title } = Typography
 
@@ -20,6 +21,8 @@ const LeetCodePage: React.FC = () => {
       {/* 3. 添加新的分类和组件 */}
       <Divider orientation="left">Medium</Divider>
       <LongestSubstringComponent />
+      <div style={{ marginTop: '24px' }} />
+      <MergeIntervalsComponent />
 
       {/* 以后有 hard 的题了，可以这样组织 */}
       {/* <Divider orientation="left">Hard</Divider> */}
