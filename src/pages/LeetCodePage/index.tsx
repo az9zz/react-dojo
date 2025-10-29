@@ -7,6 +7,7 @@ import { TwoSumComponent } from '../../leetcode/easy/001-two-sum'
 // 导入 medium 题解
 import { LongestSubstringComponent } from '../../leetcode/medium/003-longest-substring-without-repeating-characters'
 import { MergeIntervalsComponent } from '../../leetcode/medium/056-merge-intervals' // 1. 新增导入
+import { ReverseListComponent } from '../../leetcode/easy/206-reverse-linked-list'
 
 const { Title } = Typography
 
@@ -17,8 +18,8 @@ const LeetCodePage: React.FC = () => {
 
       <Divider orientation="left">Easy</Divider>
       <TwoSumComponent />
-
-      {/* 3. 添加新的分类和组件 */}
+      <div style={{ marginTop: '24px' }} />
+      <ReverseListComponent />
       <Divider orientation="left">Medium</Divider>
       <LongestSubstringComponent />
       <div style={{ marginTop: '24px' }} />
