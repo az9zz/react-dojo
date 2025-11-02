@@ -9,6 +9,7 @@ import { LongestSubstringComponent } from '../../leetcode/medium/003-longest-sub
 import { MergeIntervalsComponent } from '../../leetcode/medium/056-merge-intervals' // 1. 新增导入
 import { ReverseListComponent } from '../../leetcode/easy/206-reverse-linked-list'
 import { LinkedListCycleComponent } from '../../leetcode/easy/141-linked-list-cycle'
+import { LISComponent } from '../../leetcode/medium/300-longest-increasing-subsequence'
 
 const { Title } = Typography
 
@@ -26,6 +27,8 @@ const LeetCodePage: React.FC = () => {
       <LongestSubstringComponent />
       <div style={{ marginTop: '24px' }} />
       <MergeIntervalsComponent />
+      <div style={{ marginTop: '24px' }} />
+      <LISComponent />
       {/* 以后有 hard 的题了，可以这样组织 */}
       {/* <Divider orientation="left">Hard</Divider> */}
     </div>
