@@ -1,12 +1,27 @@
 // src/interview/001-array-flatten/index.tsx
 import React, { useState } from 'react'
-import { Card, Input, Button, Typography, Form, Alert, Space, Divider, Radio } from 'antd'
+import {
+  Card,
+  Input,
+  Button,
+  Typography,
+  Form,
+  Alert,
+  Space,
+  Divider,
+  Radio,
+  InputNumber,
+} from 'antd'
 import {
   flattenByFlat,
   flattenByRecursion,
   flattenByReduce,
   flattenByStack,
   flattenByToString,
+  flattenByFlatDepth,
+  flattenByRecursionDepth,
+  flattenByReduceDepth,
+  flattenByStackDepth,
 } from './solution'
 
 const { Paragraph } = Typography
@@ -20,33 +35,58 @@ export const ArrayFlattenComponent: React.FC = () => {
   const [error, setError] = useState<string>('')
   const [method, setMethod] = useState<Method>('Flat')
 
-  const handleRun = (values: { array: string }) => {
+  const handleRun = (values: { array: string; depth?: number | null; isDepthEnabled: boolean }) => {
     try {
       setError('')
       setResult(null)
 
-      // 使用 Function 构造函数来安全地执行字符串形式的数组
       const arr = new Function(`return ${values.array}`)()
       if (!Array.isArray(arr)) {
         throw new Error('输入必须是有效的数组格式')
       }
 
+      const depth = values.depth ?? 1 // 默认为 1
+      const isDepthEnabled = Number.isInteger(values.depth)
+
       let solutionResult: unknown[]
-      switch (method) {
-        case 'Recursion':
-          solutionResult = flattenByRecursion(arr)
-          break
-        case 'Reduce':
-          solutionResult = flattenByReduce(arr)
-          break
-        case 'Stack':
-          solutionResult = flattenByStack(arr)
-          break
-        case 'ToString':
-          solutionResult = flattenByToString(arr)
-          break
-        default:
-          solutionResult = flattenByFlat(arr)
+
+      if (isDepthEnabled) {
+        // 如果启用了深度，调用带深度的版本
+        switch (method) {
+          case 'Recursion':
+            solutionResult = flattenByRecursionDepth(arr, depth)
+            break
+          case 'Reduce':
+            solutionResult = flattenByReduceDepth(arr, depth)
+            break
+          case 'Stack':
+            solutionResult = flattenByStackDepth(arr, depth)
+            break
+          case 'ToString':
+            setError('ToString 解法不支持指定深度。')
+            solutionResult = flattenByToString(arr)
+            break
+          default:
+            solutionResult = flattenByFlatDepth(arr, depth)
+        }
+      } else {
+        // 否则调用完全扁平化的版本
+        switch (method) {
+          case 'Recursion':
+            solutionResult = flattenByRecursion(arr)
+            break
+          case 'Reduce':
+            solutionResult = flattenByReduce(arr)
+            break
+          case 'Stack':
+            solutionResult = flattenByStack(arr)
+            break
+          case 'ToString':
+            solutionResult = flattenByToString(arr)
+            break
+          default:
+            solutionResult = flattenByFlat(arr)
+        }
       }
 
       setResult(solutionResult)
@@ -59,14 +99,19 @@ export const ArrayFlattenComponent: React.FC = () => {
     }
   }
 
+  const formatResult = (res: unknown[]): string => {
+    // 使用JSON.stringify来准确显示可能存在的嵌套数组
+    return JSON.stringify(res)
+  }
+
   return (
-    <Card title="001. 扁平化嵌套数组 (Array Flattening)">
-      <Paragraph>实现一个函数，将一个嵌套多层的数组 "拉平"，变成一个一维数组。</Paragraph>
+    <Card title="001. 扁平化嵌套数组 (带深度)">
+      <Paragraph>实现一个函数，将一个嵌套多层的数组 "拉平"，可选是否指定扁平化深度。</Paragraph>
       <Form
         form={form}
         onFinish={handleRun}
         layout="vertical"
-        initialValues={{ array: '[1, [2, [3, 4], 5], 6]' }}
+        initialValues={{ array: '[1, [2, [3, 4], 5], 6]', depth: 1 }}
       >
         <Form.Item
           name="array"
@@ -75,6 +120,15 @@ export const ArrayFlattenComponent: React.FC = () => {
         >
           <TextArea rows={4} placeholder="例如: [1, [2, [3, 4], 5], 6]" />
         </Form.Item>
+
+        <Form.Item
+          name="depth"
+          label="扁平化深度 (depth)"
+          extra="不输入或清空则为完全扁平化 (depth = Infinity)"
+        >
+          <InputNumber min={0} style={{ width: '100%' }} placeholder="例如: 1. " />
+        </Form.Item>
+
         <Form.Item label="选择解法">
           <Radio.Group onChange={(e) => setMethod(e.target.value)} value={method}>
             <Radio.Button value="Flat">ES6 flat()</Radio.Button>
@@ -95,7 +149,7 @@ export const ArrayFlattenComponent: React.FC = () => {
         <Space direction="vertical" style={{ width: '100%' }}>
           <Divider>运行结果</Divider>
           {result && (
-            <Alert message={`扁平化结果: [${result.join(', ')}]`} type="success" showIcon />
+            <Alert message={`扁平化结果: ${formatResult(result)}`} type="success" showIcon />
           )}
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
