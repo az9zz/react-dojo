@@ -2,6 +2,7 @@
 import React from 'react'
 import { Typography, Divider } from 'antd'
 import { ArrayFlattenComponent } from '../../interview/001-array-flatten' // 1. 导入新组件
+import { FunctionCurryingComponent } from '../../interview/002-function-curryin'
 
 const { Title } = Typography
 
@@ -11,7 +12,8 @@ const InterviewPage: React.FC = () => {
       <Title level={2}>前端面试题实践</Title>
       <Divider orientation="left">JavaScript 基础</Divider>
       <ArrayFlattenComponent /> {/* 2. 添加新组件 */}
-      {/* 可以在这里添加更多分类和题目 */}
+      <div style={{ marginTop: '24px' }} />
+      <FunctionCurryingComponent />
     </div>
   )
 }
