@@ -3,6 +3,7 @@ import React from 'react'
 import { Typography, Divider } from 'antd'
 import { ArrayFlattenComponent } from '../../interview/001-array-flatten' // 1. 导入新组件
 import { FunctionCurryingComponent } from '../../interview/002-function-curryin'
+import { DeepCloneComponent } from '../../interview/003-deep-clone'
 
 const { Title } = Typography
 
@@ -14,6 +15,8 @@ const InterviewPage: React.FC = () => {
       <ArrayFlattenComponent /> {/* 2. 添加新组件 */}
       <div style={{ marginTop: '24px' }} />
       <FunctionCurryingComponent />
+      <div style={{ marginTop: '24px' }} />
+      <DeepCloneComponent />
     </div>
   )
 }
