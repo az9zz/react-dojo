@@ -5,6 +5,7 @@ import { ArrayFlattenComponent } from '../../interview/001-array-flatten' // 1. 
 import { FunctionCurryingComponent } from '../../interview/002-function-curryin'
 import { DeepCloneComponent } from '../../interview/003-deep-clone'
 import { EventEmitterComponent } from '../../interview/004-event-emitter'
+import { PromisePoolComponent } from '../../interview/005-promise-concurrency-control'
 
 const { Title } = Typography
 
@@ -20,6 +21,8 @@ const InterviewPage: React.FC = () => {
       <DeepCloneComponent />
       <div style={{ marginTop: '24px' }} />
       <EventEmitterComponent />
+      <div style={{ marginTop: '24px' }} />
+      <PromisePoolComponent /> {/* 2. 添加 */}
     </div>
   )
 }
