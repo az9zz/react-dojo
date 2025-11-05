@@ -4,6 +4,7 @@ import { Typography, Divider } from 'antd'
 import { ArrayFlattenComponent } from '../../interview/001-array-flatten' // 1. 导入新组件
 import { FunctionCurryingComponent } from '../../interview/002-function-curryin'
 import { DeepCloneComponent } from '../../interview/003-deep-clone'
+import { EventEmitterComponent } from '../../interview/004-event-emitter'
 
 const { Title } = Typography
 
@@ -17,6 +18,8 @@ const InterviewPage: React.FC = () => {
       <FunctionCurryingComponent />
       <div style={{ marginTop: '24px' }} />
       <DeepCloneComponent />
+      <div style={{ marginTop: '24px' }} />
+      <EventEmitterComponent />
     </div>
   )
 }
