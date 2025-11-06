@@ -22,7 +22,7 @@ const InterviewPage: React.FC = () => {
       <div style={{ marginTop: '24px' }} />
       <EventEmitterComponent />
       <div style={{ marginTop: '24px' }} />
-      <PromisePoolComponent /> {/* 2. 添加 */}
+      <PromisePoolComponent />
     </div>
   )
 }

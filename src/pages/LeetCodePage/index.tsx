@@ -10,6 +10,7 @@ import { MergeIntervalsComponent } from '../../leetcode/medium/056-merge-interva
 import { ReverseListComponent } from '../../leetcode/easy/206-reverse-linked-list'
 import { LinkedListCycleComponent } from '../../leetcode/easy/141-linked-list-cycle'
 import { LISComponent } from '../../leetcode/medium/300-longest-increasing-subsequence'
+import { SortArrayComponent } from '../../leetcode/medium/912-sort-an-array'
 
 const { Title } = Typography
 
@@ -29,6 +30,8 @@ const LeetCodePage: React.FC = () => {
       <MergeIntervalsComponent />
       <div style={{ marginTop: '24px' }} />
       <LISComponent />
+      <div style={{ marginTop: '24px' }} />
+      <SortArrayComponent />
       {/* 以后有 hard 的题了，可以这样组织 */}
       {/* <Divider orientation="left">Hard</Divider> */}
     </div>
