@@ -11,6 +11,7 @@ import { ReverseListComponent } from '../../leetcode/easy/206-reverse-linked-lis
 import { LinkedListCycleComponent } from '../../leetcode/easy/141-linked-list-cycle'
 import { LISComponent } from '../../leetcode/medium/300-longest-increasing-subsequence'
 import { SortArrayComponent } from '../../leetcode/medium/912-sort-an-array'
+import { BinarySearchComponent } from '../../leetcode/easy/704-binary-search'
 
 const { Title } = Typography
 
@@ -24,6 +25,8 @@ const LeetCodePage: React.FC = () => {
       <ReverseListComponent />
       <div style={{ marginTop: '24px' }} />
       <LinkedListCycleComponent />
+      <div style={{ marginTop: '24px' }} />
+      <BinarySearchComponent />
       <Divider orientation="left">Medium</Divider>
       <LongestSubstringComponent />
       <div style={{ marginTop: '24px' }} />
