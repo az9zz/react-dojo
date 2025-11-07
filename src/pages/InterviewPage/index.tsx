@@ -6,6 +6,7 @@ import { FunctionCurryingComponent } from '../../interview/002-function-curryin'
 import { DeepCloneComponent } from '../../interview/003-deep-clone'
 import { EventEmitterComponent } from '../../interview/004-event-emitter'
 import { PromisePoolComponent } from '../../interview/005-promise-concurrency-control'
+import { SortVersionsComponent } from '../../interview/006-sort-version-numbers'
 
 const { Title } = Typography
 
@@ -22,6 +23,8 @@ const InterviewPage: React.FC = () => {
       <div style={{ marginTop: '24px' }} />
       <EventEmitterComponent />
       <div style={{ marginTop: '24px' }} />
+      <SortVersionsComponent />
+      <Divider orientation="left">JavaScript 异步与流程控制</Divider>
       <PromisePoolComponent />
     </div>
   )
