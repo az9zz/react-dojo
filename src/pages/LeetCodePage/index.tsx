@@ -14,6 +14,7 @@ import { SortArrayComponent } from '../../leetcode/medium/912-sort-an-array'
 import { BinarySearchComponent } from '../../leetcode/easy/704-binary-search'
 import { ThreeSumComponent } from '../../leetcode/medium/015-3sum'
 import { NumIslandsComponent } from '../../leetcode/medium/200-number-of-islands'
+import { LevelOrderTraversalComponent } from '../../leetcode/medium/102-binary-tree-level-order-traversal'
 
 const { Title } = Typography
 
@@ -41,6 +42,8 @@ const LeetCodePage: React.FC = () => {
       <SortArrayComponent />
       <div style={{ marginTop: '24px' }} />
       <NumIslandsComponent />
+      <div style={{ marginTop: '24px' }} />
+      <LevelOrderTraversalComponent />
       {/* 以后有 hard 的题了，可以这样组织 */}
       {/* <Divider orientation="left">Hard</Divider> */}
     </div>
