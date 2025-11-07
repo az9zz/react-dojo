@@ -12,6 +12,7 @@ import { LinkedListCycleComponent } from '../../leetcode/easy/141-linked-list-cy
 import { LISComponent } from '../../leetcode/medium/300-longest-increasing-subsequence'
 import { SortArrayComponent } from '../../leetcode/medium/912-sort-an-array'
 import { BinarySearchComponent } from '../../leetcode/easy/704-binary-search'
+import { ThreeSumComponent } from '../../leetcode/medium/015-3sum'
 
 const { Title } = Typography
 
@@ -29,6 +30,8 @@ const LeetCodePage: React.FC = () => {
       <BinarySearchComponent />
       <Divider orientation="left">Medium</Divider>
       <LongestSubstringComponent />
+      <div style={{ marginTop: '24px' }} />
+      <ThreeSumComponent />
       <div style={{ marginTop: '24px' }} />
       <MergeIntervalsComponent />
       <div style={{ marginTop: '24px' }} />
