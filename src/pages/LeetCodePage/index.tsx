@@ -19,6 +19,7 @@ import { PalindromicSubstringsComponent } from '../../leetcode/medium/647-palind
 import { LRUCacheComponent } from '../../leetcode/medium/146-lru-cache'
 import { MergeSortedComponent } from '../../leetcode/easy/021-merge-two-sorted-lists'
 import { ValidParenthesesComponent } from '../../leetcode/easy/020-valid-parentheses'
+import { TreeTraversalComponent } from '../../leetcode/easy/094-binary-tree-traversal'
 
 const { Title } = Typography
 
@@ -34,6 +35,8 @@ const LeetCodePage: React.FC = () => {
       <LinkedListCycleComponent />
       <div style={{ marginTop: '24px' }} />
       <BinarySearchComponent />
+      <div style={{ marginTop: '24px' }} />
+      <TreeTraversalComponent />
       <div style={{ marginTop: '24px' }} />
       <ValidParenthesesComponent />
       <div style={{ marginTop: '24px' }} />
