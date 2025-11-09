@@ -18,6 +18,7 @@ import { LevelOrderTraversalComponent } from '../../leetcode/medium/102-binary-t
 import { PalindromicSubstringsComponent } from '../../leetcode/medium/647-palindromic-substrings'
 import { LRUCacheComponent } from '../../leetcode/medium/146-lru-cache'
 import { MergeSortedComponent } from '../../leetcode/easy/021-merge-two-sorted-lists'
+import { ValidParenthesesComponent } from '../../leetcode/easy/020-valid-parentheses'
 
 const { Title } = Typography
 
@@ -33,6 +34,8 @@ const LeetCodePage: React.FC = () => {
       <LinkedListCycleComponent />
       <div style={{ marginTop: '24px' }} />
       <BinarySearchComponent />
+      <div style={{ marginTop: '24px' }} />
+      <ValidParenthesesComponent />
       <div style={{ marginTop: '24px' }} />
       <MergeSortedComponent />
 
