@@ -16,6 +16,7 @@ import { ThreeSumComponent } from '../../leetcode/medium/015-3sum'
 import { NumIslandsComponent } from '../../leetcode/medium/200-number-of-islands'
 import { LevelOrderTraversalComponent } from '../../leetcode/medium/102-binary-tree-level-order-traversal'
 import { PalindromicSubstringsComponent } from '../../leetcode/medium/647-palindromic-substrings'
+import { LRUCacheComponent } from '../../leetcode/medium/146-lru-cache'
 
 const { Title } = Typography
 
@@ -47,6 +48,8 @@ const LeetCodePage: React.FC = () => {
       <LevelOrderTraversalComponent />
       <div style={{ marginTop: '24px' }} />
       <PalindromicSubstringsComponent />
+      <div style={{ marginTop: '24px' }} />
+      <LRUCacheComponent />
       {/* 以后有 hard 的题了，可以这样组织 */}
       {/* <Divider orientation="left">Hard</Divider> */}
     </div>
