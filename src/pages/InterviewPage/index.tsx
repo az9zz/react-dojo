@@ -9,6 +9,7 @@ import { PromisePoolComponent } from '../../interview/005-promise-concurrency-co
 import { SortVersionsComponent } from '../../interview/006-sort-version-numbers'
 import { DebounceThrottleComponent } from '../../interview/008-debounce-throttle'
 import { ClosureInLoopComponent } from '../../interview/009-closure-in-loop'
+import { ArrayToTreeComponent } from '../../interview/010-array-to-tree'
 
 const { Title } = Typography
 
@@ -28,6 +29,8 @@ const InterviewPage: React.FC = () => {
       <SortVersionsComponent />
       <div style={{ marginTop: '24px' }} />
       <ClosureInLoopComponent />
+      <div style={{ marginTop: '24px' }} />
+      <ArrayToTreeComponent />
       <Divider orientation="left">JavaScript 异步与流程控制</Divider>
       <PromisePoolComponent />
       <Divider orientation="left">JavaScript 性能优化</Divider>
