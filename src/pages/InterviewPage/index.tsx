@@ -8,6 +8,7 @@ import { EventEmitterComponent } from '../../interview/004-event-emitter'
 import { PromisePoolComponent } from '../../interview/005-promise-concurrency-control'
 import { SortVersionsComponent } from '../../interview/006-sort-version-numbers'
 import { DebounceThrottleComponent } from '../../interview/008-debounce-throttle'
+import { ClosureInLoopComponent } from '../../interview/009-closure-in-loop'
 
 const { Title } = Typography
 
@@ -25,6 +26,8 @@ const InterviewPage: React.FC = () => {
       <EventEmitterComponent />
       <div style={{ marginTop: '24px' }} />
       <SortVersionsComponent />
+      <div style={{ marginTop: '24px' }} />
+      <ClosureInLoopComponent />
       <Divider orientation="left">JavaScript 异步与流程控制</Divider>
       <PromisePoolComponent />
       <Divider orientation="left">JavaScript 性能优化</Divider>
