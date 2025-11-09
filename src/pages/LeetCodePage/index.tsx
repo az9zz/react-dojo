@@ -17,6 +17,7 @@ import { NumIslandsComponent } from '../../leetcode/medium/200-number-of-islands
 import { LevelOrderTraversalComponent } from '../../leetcode/medium/102-binary-tree-level-order-traversal'
 import { PalindromicSubstringsComponent } from '../../leetcode/medium/647-palindromic-substrings'
 import { LRUCacheComponent } from '../../leetcode/medium/146-lru-cache'
+import { MergeSortedComponent } from '../../leetcode/easy/021-merge-two-sorted-lists'
 
 const { Title } = Typography
 
@@ -32,6 +33,9 @@ const LeetCodePage: React.FC = () => {
       <LinkedListCycleComponent />
       <div style={{ marginTop: '24px' }} />
       <BinarySearchComponent />
+      <div style={{ marginTop: '24px' }} />
+      <MergeSortedComponent />
+
       <Divider orientation="left">Medium</Divider>
       <LongestSubstringComponent />
       <div style={{ marginTop: '24px' }} />
