@@ -7,6 +7,7 @@ import { DeepCloneComponent } from '../../interview/003-deep-clone'
 import { EventEmitterComponent } from '../../interview/004-event-emitter'
 import { PromisePoolComponent } from '../../interview/005-promise-concurrency-control'
 import { SortVersionsComponent } from '../../interview/006-sort-version-numbers'
+import { DebounceThrottleComponent } from '../../interview/008-debounce-throttle'
 
 const { Title } = Typography
 
@@ -26,6 +27,8 @@ const InterviewPage: React.FC = () => {
       <SortVersionsComponent />
       <Divider orientation="left">JavaScript 异步与流程控制</Divider>
       <PromisePoolComponent />
+      <Divider orientation="left">JavaScript 性能优化</Divider>
+      <DebounceThrottleComponent />
     </div>
   )
 }
