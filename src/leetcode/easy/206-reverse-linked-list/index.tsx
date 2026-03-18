@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { ListNode, reverseList } from './solution'
+import CodeBlock from '../../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
 
@@ -99,6 +101,9 @@ export const ReverseListComponent = () => {
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

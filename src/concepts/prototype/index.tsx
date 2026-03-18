@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import { Card, Button, Typography, Space, Divider, Alert } from 'antd'
+import CodeBlock from '../../components/CodeBlock'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -52,11 +53,7 @@ const PrototypeChainExample = () => {
       <Button type="primary" onClick={runDemo}>
         运行：原型链查找对比
       </Button>
-      {result.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {result.join('\n')}
-        </pre>
-      )}
+      {result.length > 0 && <CodeBlock>{result.join('\n')}</CodeBlock>}
     </Space>
   )
 }
@@ -130,11 +127,7 @@ const InheritanceExample = () => {
       <Button type="primary" onClick={runDemo}>
         运行：继承对比
       </Button>
-      {result.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {result.join('\n')}
-        </pre>
-      )}
+      {result.length > 0 && <CodeBlock>{result.join('\n')}</CodeBlock>}
     </Space>
   )
 }
@@ -180,11 +173,7 @@ const DangerousPrototypeExample = () => {
       <Button type="primary" onClick={runDemo}>
         运行：动态修改原型
       </Button>
-      {result.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {result.join('\n')}
-        </pre>
-      )}
+      {result.length > 0 && <CodeBlock>{result.join('\n')}</CodeBlock>}
       <Alert
         message="生产环境中应避免修改内置对象（如 Array.prototype）的原型，这可能导致不可预料的副作用。"
         type="warning"

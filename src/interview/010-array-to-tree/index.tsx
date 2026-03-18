@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Radio, Tree, Input } from 'antd'
 import { type TreeNode, arrayToTreeByMap, arrayToTreeByRecursion } from './solution'
 import type { DataNode } from 'antd/es/tree'
+import CodeBlock from '../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
 const { TextArea } = Input
@@ -103,6 +105,9 @@ export const ArrayToTreeComponent = () => {
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

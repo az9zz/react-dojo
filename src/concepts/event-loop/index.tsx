@@ -1,6 +1,7 @@
 // src/concepts/event-loop/index.tsx
 import { useState, useRef, useEffect } from 'react'
 import { Card, Button, Typography, Space, Divider, Tag } from 'antd'
+import CodeBlock from '../../components/CodeBlock'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -44,9 +45,7 @@ console.log('5: 同步')`
         执行顺序：同步代码 → 微任务（<Text code>Promise.then</Text>、
         <Text code>queueMicrotask</Text>）→ 宏任务（<Text code>setTimeout</Text>）。
       </Paragraph>
-      <pre style={{ background: '#f0f0f0', padding: 12, borderRadius: 6, fontSize: 13 }}>
-        {code}
-      </pre>
+      <CodeBlock language="javascript">{code}</CodeBlock>
       {!guess ? (
         <Button type="primary" onClick={runDemo}>
           先猜猜输出顺序？
@@ -66,11 +65,7 @@ console.log('5: 同步')`
           </Button>
         </Space>
       )}
-      {result.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {result.join('\n')}
-        </pre>
-      )}
+      {result.length > 0 && <CodeBlock>{result.join('\n')}</CodeBlock>}
     </Space>
   )
 }
@@ -129,11 +124,7 @@ const SetTimeoutZeroExample = () => {
       <Button type="primary" onClick={runDemo} loading={running}>
         运行：测量真实延迟
       </Button>
-      {result.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {result.join('\n')}
-        </pre>
-      )}
+      {result.length > 0 && <CodeBlock>{result.join('\n')}</CodeBlock>}
     </Space>
   )
 }
@@ -260,12 +251,10 @@ const EventLoopAnimation = () => {
   return (
     <Space direction="vertical" style={{ width: '100%' }}>
       <Paragraph>可视化 Call Stack、微任务队列和宏任务队列的执行过程。</Paragraph>
-      <pre style={{ background: '#f0f0f0', padding: 12, borderRadius: 6, fontSize: 13 }}>
-        {`console.log("同步1")
+      <CodeBlock language="javascript">{`console.log("同步1")
 setTimeout(() => console.log("setTimeout"), 0)
 Promise.resolve().then(() => console.log("Promise"))
-console.log("同步2")`}
-      </pre>
+console.log("同步2")`}</CodeBlock>
       <Space>
         <Button type="primary" onClick={autoPlay} loading={running}>
           自动播放

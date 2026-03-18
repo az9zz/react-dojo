@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider, Radio } from 'antd'
 import { deepCloneJSON, deepCloneRecursive, deepCloneFull } from './solution'
+import CodeBlock from '../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
 const { TextArea } = Input
@@ -114,14 +116,13 @@ export const DeepCloneComponent = () => {
       {(result || error) && (
         <Space direction="vertical" className="w-full">
           <Divider>拷贝结果 (字符串化展示)</Divider>
-          {result && (
-            <pre className="bg-[#f6f8fa] p-4 rounded-md whitespace-pre-wrap">
-              <code>{result}</code>
-            </pre>
-          )}
+          {result && <CodeBlock>{result}</CodeBlock>}
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

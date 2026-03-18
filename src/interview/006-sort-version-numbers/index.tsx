@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, List, Input } from 'antd'
 import { sortVersionNumbers } from './solution'
+import CodeBlock from '../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
 const { TextArea } = Input
@@ -77,6 +79,9 @@ export const SortVersionsComponent = () => {
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

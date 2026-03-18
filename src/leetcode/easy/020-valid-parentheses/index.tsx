@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Input } from 'antd'
 import { isValid } from './solution'
+import CodeBlock from '../../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
 
@@ -39,6 +41,9 @@ export const ValidParenthesesComponent = () => {
           />
         </Space>
       )}
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from 'react'
 import { Card, Button, Typography, Space, Divider, Alert, Tag } from 'antd'
+import CodeBlock from '../../components/CodeBlock'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -98,11 +99,7 @@ const BindingRulesExample = () => {
           new 绑定
         </Button>
       </Space>
-      {result.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {result.join('\n')}
-        </pre>
-      )}
+      {result.length > 0 && <CodeBlock>{result.join('\n')}</CodeBlock>}
     </Space>
   )
 }
@@ -157,11 +154,7 @@ const ArrowVsNormalExample = () => {
       <Button type="primary" onClick={runDemo}>
         运行：箭头函数 vs 普通函数
       </Button>
-      {result.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {result.join('\n')}
-        </pre>
-      )}
+      {result.length > 0 && <CodeBlock>{result.join('\n')}</CodeBlock>}
     </Space>
   )
 }
@@ -206,11 +199,7 @@ const ReactThisExample = () => {
       <Button type="primary" onClick={runDemo}>
         展示：React 中的 this 问题
       </Button>
-      {result.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {result.join('\n')}
-        </pre>
-      )}
+      {result.length > 0 && <CodeBlock>{result.join('\n')}</CodeBlock>}
       <Alert message="推荐使用函数组件 + Hooks，彻底避免 this 相关问题。" type="success" />
     </Space>
   )

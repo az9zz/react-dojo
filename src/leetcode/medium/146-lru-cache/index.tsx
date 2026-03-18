@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Card, Button, Typography, Space, Divider, InputNumber, List, Radio } from 'antd'
 import { LRUCache } from './solution'
+import CodeBlock from '../../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph, Text } = Typography
 
@@ -146,6 +148,9 @@ export const LRUCacheComponent = () => {
           </List.Item>
         )}
       />
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

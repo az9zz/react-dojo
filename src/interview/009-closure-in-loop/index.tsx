@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Card, Button, Typography, Space, Divider, List } from 'antd'
 import { runProblematic, runWithLet, runWithIIFE, runWithSetTimeoutArg } from './solution'
+import CodeBlock from '../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
 
@@ -46,6 +48,9 @@ export const ClosureInLoopComponent = () => {
         )}
         className="min-h-[220px]"
       />
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

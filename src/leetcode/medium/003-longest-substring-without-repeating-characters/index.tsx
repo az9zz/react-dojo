@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { lengthOfLongestSubstring } from './solution'
+import CodeBlock from '../../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
 
@@ -34,6 +36,9 @@ export const LongestSubstringComponent = () => {
           <Alert message={`最长子串的长度为: ${result}`} type="success" showIcon />
         </Space>
       )}
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { twoSum } from './solution' // 导入核心算法
+import CodeBlock from '../../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
 
@@ -88,6 +90,9 @@ export const TwoSumComponent = () => {
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

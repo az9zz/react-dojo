@@ -2,6 +2,8 @@
 import { useState, useMemo, useCallback } from 'react'
 import { Card, Input, Button, Typography, Space, Divider, Alert, Tag } from 'antd'
 import { curry } from './solution'
+import CodeBlock from '../../components/CodeBlock'
+import solutionCode from './solution.ts?raw'
 
 const { Paragraph, Text } = Typography
 
@@ -69,9 +71,7 @@ export const FunctionCurryingComponent = () => {
       </Paragraph>
       <Paragraph>
         <Text strong>原始函数:</Text>
-        <pre>
-          <code>{'const add = (a, b, c) => a + b + c;'}</code>
-        </pre>
+        <CodeBlock language="javascript">{'const add = (a, b, c) => a + b + c;'}</CodeBlock>
       </Paragraph>
       <Divider />
       <Space direction="vertical" className="w-full">
@@ -107,6 +107,9 @@ export const FunctionCurryingComponent = () => {
           showIcon
         />
       )}
+
+      <Divider>解题代码</Divider>
+      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
     </Card>
   )
 }

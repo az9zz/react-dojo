@@ -1,6 +1,7 @@
 // src/concepts/async/index.tsx
 import { useState } from 'react'
 import { Card, Button, Typography, Space, Divider, Alert } from 'antd'
+import CodeBlock from '../../components/CodeBlock'
 
 const { Title, Paragraph, Text } = Typography
 
@@ -45,11 +46,7 @@ const PromiseChainExample = () => {
       <Button type="primary" onClick={runDemo} loading={running}>
         运行：Promise 链式调用
       </Button>
-      {logs.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {logs.join('\n')}
-        </pre>
-      )}
+      {logs.length > 0 && <CodeBlock>{logs.join('\n')}</CodeBlock>}
     </Space>
   )
 }
@@ -92,11 +89,7 @@ const AsyncAwaitExample = () => {
       <Button type="primary" onClick={runDemo} loading={running}>
         运行：async/await 版本
       </Button>
-      {logs.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {logs.join('\n')}
-        </pre>
-      )}
+      {logs.length > 0 && <CodeBlock>{logs.join('\n')}</CodeBlock>}
     </Space>
   )
 }
@@ -162,11 +155,7 @@ const ErrorHandlingExample = () => {
           try/catch 方式
         </Button>
       </Space>
-      {logs.length > 0 && (
-        <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
-          {logs.join('\n')}
-        </pre>
-      )}
+      {logs.length > 0 && <CodeBlock>{logs.join('\n')}</CodeBlock>}
       <Alert
         message="最佳实践：async 函数中始终使用 try/catch 包裹 await，或在调用处 .catch()。"
         type="info"
