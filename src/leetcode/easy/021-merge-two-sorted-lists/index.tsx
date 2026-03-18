@@ -72,7 +72,7 @@ export const MergeSortedComponent = () => {
         </Form.Item>
         <Space>
           <Form.Item name="m" label="数组1有效元素个数">
-            <Input style={{ width: '80px' }} />
+            <Input className="w-20" />
           </Form.Item>
           <Form.Item name="nums2" label="数组2">
             <Input />
@@ -88,7 +88,7 @@ export const MergeSortedComponent = () => {
 
       <Divider>运行结果</Divider>
       {(listResult || arrayResult || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           {listResult && (
             <Alert message={`链表合并结果: [${listResult.join(', ')}]`} type="success" />
           )}

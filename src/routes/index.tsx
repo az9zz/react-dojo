@@ -9,9 +9,7 @@ const ConceptsPage = lazy(() => import('@/pages/ConceptsPage'))
 const InterviewPage = lazy(() => import('@/pages/InterviewPage'))
 
 const LazyPage = ({ children }: { children: ReactNode }) => (
-  <Suspense fallback={<Spin size="large" style={{ display: 'block', margin: '120px auto' }} />}>
-    {children}
-  </Suspense>
+  <Suspense fallback={<Spin size="large" className="!block mx-auto !my-30" />}>{children}</Suspense>
 )
 
 const router = createBrowserRouter([

@@ -65,7 +65,7 @@ export const SortVersionsComponent = () => {
       </Form>
 
       {(sorted || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>排序结果</Divider>
           {sorted && (
             <List

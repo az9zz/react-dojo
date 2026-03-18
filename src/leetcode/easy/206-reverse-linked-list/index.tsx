@@ -91,7 +91,7 @@ export const ReverseListComponent = () => {
       </Form>
 
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           {result && (
             <Alert message={`反转后的链表: [${result.join(',')}]`} type="success" showIcon />

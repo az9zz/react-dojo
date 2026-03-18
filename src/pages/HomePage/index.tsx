@@ -1,37 +1,53 @@
-// src/pages/HomePage/index.tsx
-import { Card, Typography, List } from 'antd'
-import { Link } from 'react-router-dom'
-
-const { Title, Paragraph } = Typography
+import { Card } from 'antd'
+import { useNavigate } from 'react-router-dom'
 
 const features = [
   {
+    emoji: '🧠',
     title: 'React 核心概念练习',
     path: '/concepts',
-    description: '练习 Hooks, Context, 性能优化等。',
+    description: '练习 Hooks, Context, 性能优化等核心概念，深入理解 React 的工作原理。',
   },
-  { title: 'LeetCode 算法题解', path: '/leetcode', description: '可视化地调试和展示算法题解。' },
-  { title: '前端面试题实践', path: '/interview', description: '复现经典前端面试题。' },
+  {
+    emoji: '🖥️',
+    title: 'LeetCode 算法题解',
+    path: '/leetcode',
+    description: '可视化地调试和展示算法题解，涵盖数组、链表、树等经典数据结构。',
+  },
+  {
+    emoji: '🎯',
+    title: '前端面试题实践',
+    path: '/interview',
+    description: '复现经典前端面试题，包括手写 Promise、深拷贝、防抖节流等。',
+  },
 ]
 
 const HomePage = () => {
+  const navigate = useNavigate()
+
   return (
     <div>
-      <Title level={2}>React Dojo - 我的前端演武场</Title>
-      <Paragraph>欢迎来到我的 React 练习平台。这里是我学习、实践和巩固前端知识的地方。</Paragraph>
-      <List
-        grid={{ gutter: 16, column: 3 }}
-        dataSource={features}
-        renderItem={(item) => (
-          <List.Item>
-            <Link to={item.path}>
-              <Card title={item.title} hoverable>
-                {item.description}
-              </Card>
-            </Link>
-          </List.Item>
-        )}
-      />
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl py-16 px-8 text-center mb-10">
+        <h1 className="text-4xl font-bold text-gray-800 mb-4">React Dojo</h1>
+        <p className="text-lg text-gray-500 max-w-xl mx-auto">
+          我的前端演武场 —— 学习、实践和巩固前端知识的互动平台
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {features.map((item) => (
+          <Card
+            key={item.path}
+            hoverable
+            className="transition-transform duration-200 hover:-translate-y-1"
+            onClick={() => navigate(item.path)}
+          >
+            <div className="text-4xl mb-4">{item.emoji}</div>
+            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+            <p className="text-gray-500">{item.description}</p>
+          </Card>
+        ))}
+      </div>
     </div>
   )
 }

@@ -89,7 +89,7 @@ export const ArrayToTreeComponent = () => {
 
       <Divider>转换结果</Divider>
       {(treeData || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           {treeData && treeData.length > 0 && (
             // 使用 antd 的 Tree 组件来美观地展示结果
             <Tree

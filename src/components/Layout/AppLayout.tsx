@@ -16,18 +16,9 @@ const AppLayout = () => {
   const navigate = useNavigate()
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Header
-        style={{
-          background: '#fff',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 48px',
-          borderBottom: '1px solid #f0f0f0',
-        }}
-      >
-        <Title level={4} style={{ margin: 0, cursor: 'pointer' }} onClick={() => navigate('/')}>
+    <Layout className="min-h-screen">
+      <Header className="!bg-white flex items-center justify-between !px-12 border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <Title level={4} className="!m-0 cursor-pointer" onClick={() => navigate('/')}>
           React Dojo
         </Title>
         <Space>
@@ -42,10 +33,10 @@ const AppLayout = () => {
           ))}
         </Space>
       </Header>
-      <Content style={{ padding: '24px 48px' }}>
+      <Content className="py-6 px-12">
         <Outlet />
       </Content>
-      <Footer style={{ textAlign: 'center' }}>
+      <Footer className="text-center">
         React Dojo ©{new Date().getFullYear()} Created by You
       </Footer>
     </Layout>

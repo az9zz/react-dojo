@@ -61,7 +61,7 @@ export const LinkedListCycleComponent = () => {
           label="环的起始位置 (pos, -1表示无环)"
           rules={[{ required: true, message: '请输入 pos' }]}
         >
-          <InputNumber min={-1} style={{ width: '100%' }} placeholder="例如: 1" />
+          <InputNumber min={-1} className="w-full" placeholder="例如: 1" />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit">
@@ -71,7 +71,7 @@ export const LinkedListCycleComponent = () => {
       </Form>
 
       {(result !== null || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           {result !== null && (
             <Alert

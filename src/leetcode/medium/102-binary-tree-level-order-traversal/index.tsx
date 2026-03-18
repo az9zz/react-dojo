@@ -13,23 +13,20 @@ const TreeVisualizer: FC<{ node: TreeNode | null }> = ({ node }) => {
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', margin: '10px' }}>
+    <div className="flex flex-col items-center m-2.5">
       <div
+        className="flex items-center justify-center rounded-full"
         style={{
           border: '1px solid #1890ff',
-          borderRadius: '50%',
           width: 30,
           height: 30,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           backgroundColor: '#e6f7ff',
         }}
       >
         {node.val}
       </div>
       {(node.left || node.right) && (
-        <div style={{ display: 'flex', marginTop: '10px' }}>
+        <div className="flex mt-2.5">
           <TreeVisualizer node={node.left} />
           <TreeVisualizer node={node.right} />
         </div>
@@ -88,13 +85,13 @@ export const LevelOrderTraversalComponent = () => {
       </Form>
 
       <Divider>可视化树结构 (简化版)</Divider>
-      <div style={{ display: 'flex', justifyContent: 'center', overflowX: 'auto' }}>
+      <div className="flex justify-center overflow-x-auto">
         {treeRoot ? <TreeVisualizer node={treeRoot} /> : <p>输入数组以生成树</p>}
       </div>
 
       <Divider>遍历结果</Divider>
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           {result && (
             <Alert message={`层序遍历结果: ${JSON.stringify(result)}`} type="success" showIcon />
           )}

@@ -62,7 +62,7 @@ export const PalindromicSubstringsComponent = () => {
       </Form>
 
       {result !== null && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           <Alert message={`执行耗时: ${executionTime} ms`} type="info" />
           <Alert message={`找到 ${result} 个回文子串`} type="success" showIcon />

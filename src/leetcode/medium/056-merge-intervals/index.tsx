@@ -74,7 +74,7 @@ export const MergeIntervalsComponent = () => {
       </Form>
 
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           {result && (
             <Alert message={`合并后的区间: ${formatResult(result)}`} type="success" showIcon />

@@ -112,17 +112,10 @@ export const DeepCloneComponent = () => {
       </Form>
 
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>拷贝结果 (字符串化展示)</Divider>
           {result && (
-            <pre
-              style={{
-                background: '#f6f8fa',
-                padding: '16px',
-                borderRadius: '6px',
-                whiteSpace: 'pre-wrap',
-              }}
-            >
+            <pre className="bg-[#f6f8fa] p-4 rounded-md whitespace-pre-wrap">
               <code>{result}</code>
             </pre>
           )}

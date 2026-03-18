@@ -126,7 +126,7 @@ export const ArrayFlattenComponent = () => {
           label="扁平化深度 (depth)"
           extra="不输入或清空则为完全扁平化 (depth = Infinity)"
         >
-          <InputNumber min={0} style={{ width: '100%' }} placeholder="例如: 1. " />
+          <InputNumber min={0} className="w-full" placeholder="例如: 1. " />
         </Form.Item>
 
         <Form.Item label="选择解法">
@@ -146,7 +146,7 @@ export const ArrayFlattenComponent = () => {
       </Form>
 
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           {result && (
             <Alert message={`扁平化结果: ${formatResult(result)}`} type="success" showIcon />

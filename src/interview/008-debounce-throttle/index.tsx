@@ -10,21 +10,15 @@ const DemoBox: FC<{ title: string; onMouseMove: () => void; count: number }> = (
   onMouseMove,
   count,
 }) => (
-  <div style={{ padding: '16px', border: '1px solid #eee', borderRadius: '4px' }}>
+  <div className="p-4 border border-solid border-[#eee] rounded">
     <Title level={5}>{title}</Title>
     <div
       onMouseMove={onMouseMove}
-      style={{
-        height: 100,
-        backgroundColor: '#f0f2f5',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
+      className="h-[100px] bg-[#f0f2f5] flex items-center justify-center"
     >
       <Paragraph>在此区域移动鼠标</Paragraph>
     </div>
-    <Statistic title="函数执行次数" value={count} style={{ marginTop: 8 }} />
+    <Statistic title="函数执行次数" value={count} className="mt-2" />
   </div>
 )
 
@@ -47,7 +41,7 @@ export const DebounceThrottleComponent = () => {
         message="在下方的灰色区域快速移动鼠标，观察三种情况下函数执行次数的差异。"
       />
       <Divider />
-      <Space direction="vertical" style={{ width: '100%' }}>
+      <Space direction="vertical" className="w-full">
         <DemoBox title="原始函数 (无处理)" onMouseMove={handleRawMove} count={rawCount} />
         <DemoBox
           title="防抖 (Debounce - 延迟 500ms)"

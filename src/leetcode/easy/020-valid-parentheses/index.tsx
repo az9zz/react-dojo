@@ -30,7 +30,7 @@ export const ValidParenthesesComponent = () => {
       </Form>
 
       {result !== null && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>校验结果</Divider>
           <Alert
             message={result ? '字符串是有效的' : '字符串是无效的'}

@@ -79,7 +79,7 @@ export const LISComponent = () => {
       </Form>
 
       {(result !== null || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           {result !== null && (
             <Alert message={`最长递增子序列的长度为: ${result}`} type="success" showIcon />

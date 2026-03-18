@@ -80,7 +80,7 @@ export const TwoSumComponent = () => {
       </Form>
 
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           {result && (
             <Alert message={`成功！找到下标: [${result.join(', ')}]`} type="success" showIcon />

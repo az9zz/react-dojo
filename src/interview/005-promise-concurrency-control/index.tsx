@@ -93,9 +93,9 @@ export const PromisePoolComponent = () => {
   return (
     <Card title="004. Promise 并发控制 (Promise Concurrency Control)">
       <Paragraph>实现一个函数来控制 Promise 的并发执行数量。</Paragraph>
-      <Space align="center" style={{ marginBottom: 24 }}>
+      <Space align="center" className="mb-6">
         <Text>并发数:</Text>
-        <Slider min={1} max={10} value={poolLimit} onChange={setPoolLimit} style={{ width: 120 }} />
+        <Slider min={1} max={10} value={poolLimit} onChange={setPoolLimit} className="w-[120px]" />
         <InputNumber
           min={1}
           max={10}
@@ -103,7 +103,7 @@ export const PromisePoolComponent = () => {
           onChange={(val) => setPoolLimit(val || 1)}
         />
 
-        <Text style={{ marginLeft: 24 }}>任务数:</Text>
+        <Text className="ml-6">任务数:</Text>
         <InputNumber
           min={1}
           max={50}
@@ -139,7 +139,7 @@ export const PromisePoolComponent = () => {
             </Tag>
           </List.Item>
         )}
-        style={{ maxHeight: 300, overflowY: 'auto', marginBottom: 16 }}
+        className="max-h-[300px] overflow-y-auto mb-4"
       />
       {finalResult && (
         <Alert

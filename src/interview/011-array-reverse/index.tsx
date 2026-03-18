@@ -88,7 +88,7 @@ export const ArrayReverseComponent = () => {
 
       <Divider>运行结果</Divider>
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           {result && (
             <>
               <Alert message={`原始数组: [${original.join(', ')}]`} type="info" />

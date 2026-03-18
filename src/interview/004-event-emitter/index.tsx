@@ -73,7 +73,7 @@ export const EventEmitterComponent = () => {
         实现一个 `EventEmitter`
         类，用于实现发布-订阅模式。下面是两个独立的组件，它们通过一个共享的事件中心实例进行通信。
       </Paragraph>
-      <Space direction="vertical" style={{ width: '100%' }}>
+      <Space direction="vertical" className="w-full">
         <SubscriberComponent id={1} />
         <SubscriberComponent id={2} />
       </Space>

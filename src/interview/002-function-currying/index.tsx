@@ -74,8 +74,8 @@ export const FunctionCurryingComponent = () => {
         </pre>
       </Paragraph>
       <Divider />
-      <Space direction="vertical" style={{ width: '100%' }}>
-        <Space.Compact style={{ width: '100%' }}>
+      <Space direction="vertical" className="w-full">
+        <Space.Compact className="w-full">
           <Input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
@@ -86,7 +86,7 @@ export const FunctionCurryingComponent = () => {
             调用
           </Button>
         </Space.Compact>
-        <Button onClick={handleReset} style={{ width: '100%' }}>
+        <Button onClick={handleReset} className="w-full">
           开始 / 重置
         </Button>
       </Space>

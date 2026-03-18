@@ -1,31 +1,5 @@
-/* src/styles/global.css */
+@import 'tailwindcss';
 
-/* 1. 使用更直观的盒模型 */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/* 2. 基础重置，移除默认的 margin/padding */
-body, h1, h2, h3, h4, p, ul, ol, li {
-  margin: 0;
-  padding: 0;
-}
-
-/* 3. 设置一个更舒适的全局字体和行高 */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f0f2f5; /* 一个柔和的背景色，类似 Antd 的布局背景 */
-  line-height: 1.5;
-}
-
-/* 4. 定义一个主内容区域的统一样式 (可选，但推荐) */
-main {
-  padding: 24px;
+  background-color: #f0f2f5;
 }

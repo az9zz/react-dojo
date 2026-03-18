@@ -39,23 +39,19 @@ export const NumIslandsComponent = () => {
     <Card title="200. 岛屿数量 (Number of Islands)">
       <Paragraph>点击下方的网格可以切换陆地 ('1') 和水 ('0')，岛屿数量会实时更新。</Paragraph>
 
-      <div style={{ marginBottom: '16px' }}>
+      <div className="mb-4">
         {grid.map((row, r) => (
-          <div key={r} style={{ display: 'flex' }}>
+          <div key={r} className="flex">
             {row.map((cell, c) => (
               <button
                 key={c}
                 onClick={() => handleCellClick(r, c)}
+                className="flex items-center justify-center cursor-pointer text-xs"
                 style={{
                   width: 30,
                   height: 30,
                   border: '1px solid #ccc',
                   backgroundColor: cell === '1' ? '#87CEEB' : '#FFFFFF',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '12px',
                 }}
               >
                 {cell}

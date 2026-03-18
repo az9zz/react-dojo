@@ -1,5 +1,8 @@
-import { Typography, Divider, Flex } from 'antd'
+import { Typography, Flex } from 'antd'
 import { interviewRegistry } from '@/interview/registry'
+import CategoryNav from '@/components/CategoryNav'
+import { slugify } from '@/utils/slugify'
+import SectionHeader from '@/components/SectionHeader'
 
 const { Title } = Typography
 
@@ -9,12 +12,13 @@ const InterviewPage = () => {
   return (
     <div>
       <Title level={2}>前端面试题实践</Title>
+      <CategoryNav categories={categories} />
       {categories.map((cat) => {
         const entries = interviewRegistry.filter((e) => e.category === cat)
         if (entries.length === 0) return null
         return (
           <div key={cat}>
-            <Divider orientation="left">{cat}</Divider>
+            <SectionHeader id={slugify(cat)} title={cat} />
             <Flex vertical gap={24}>
               {entries.map((entry) => (
                 <entry.component key={entry.id} />

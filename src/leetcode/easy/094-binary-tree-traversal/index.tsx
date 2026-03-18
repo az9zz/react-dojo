@@ -87,7 +87,7 @@ export const TreeTraversalComponent = () => {
 
       <Divider>遍历结果</Divider>
       {(Object.keys(results).length > 0 || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <List
             bordered
             dataSource={[

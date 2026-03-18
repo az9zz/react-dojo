@@ -70,9 +70,9 @@ export const BinarySearchComponent = () => {
       </Form>
 
       <Divider>查找过程可视化</Divider>
-      <div style={{ fontFamily: 'monospace', fontSize: '16px', lineHeight: '2' }}>
+      <div className="font-mono text-base leading-8">
         {searchSteps.map((step, index) => (
-          <div key={index} style={{ marginBottom: '10px' }}>
+          <div key={index} className="mb-2.5">
             <div>
               <b>Step {index + 1}:</b> {step.message}
             </div>
@@ -89,13 +89,13 @@ export const BinarySearchComponent = () => {
                           ? 'geekblue'
                           : 'default'
                   }
-                  style={{ minWidth: 32, textAlign: 'center' }}
+                  className="min-w-8 text-center"
                 >
                   {num}
                 </Tag>
               ))}
             </div>
-            <div style={{ marginTop: '5px' }}>
+            <div className="mt-1.5">
               <Tag color="blue">Left: {step.left}</Tag>
               <Tag color="blue">Right: {step.right}</Tag>
               <Tag color="red">Mid: {step.mid}</Tag>

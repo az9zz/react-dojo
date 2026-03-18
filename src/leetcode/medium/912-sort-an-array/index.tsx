@@ -76,7 +76,7 @@ export const SortArrayComponent = () => {
       </Form>
 
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           {executionTime && <Alert message={`执行耗时: ${executionTime} ms`} type="info" />}
           {result && <Alert message={`排序结果: ${result}`} type="success" showIcon />}

@@ -29,7 +29,7 @@ export const LongestSubstringComponent = () => {
       </Form>
 
       {result !== null && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           <Alert message={`最长子串的长度为: ${result}`} type="success" showIcon />
         </Space>

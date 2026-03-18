@@ -78,7 +78,7 @@ export const LRUCacheComponent = () => {
   return (
     <Card title="146. LRU 缓存 (LRU Cache)">
       <Paragraph>设计并实现一个 LRU (最近最少使用) 缓存机制。</Paragraph>
-      <Space direction="vertical" style={{ width: '100%' }}>
+      <Space direction="vertical" className="w-full">
         <Space>
           <Text>设置容量:</Text>
           <InputNumber min={1} value={capacity} onChange={(val) => setCapacity(val || 1)} />
@@ -106,7 +106,7 @@ export const LRUCacheComponent = () => {
             placeholder="key"
             value={currentKey}
             onChange={(val) => setCurrentKey(val)}
-            style={{ margin: '0 8px' }}
+            className="mx-2"
           />
           {currentActionType === 'put' && (
             <InputNumber
@@ -115,7 +115,7 @@ export const LRUCacheComponent = () => {
               onChange={(val) => setCurrentValue(val)}
             />
           )}
-          <Button onClick={addAction} style={{ marginLeft: 8 }}>
+          <Button onClick={addAction} className="ml-2">
             添加操作
           </Button>
         </Card>
@@ -138,12 +138,10 @@ export const LRUCacheComponent = () => {
         dataSource={logs}
         renderItem={(log) => (
           <List.Item>
-            <pre
-              style={{ margin: 0, display: 'flex', justifyContent: 'space-between', width: '100%' }}
-            >
-              <span style={{ width: '30%' }}>{log.action}</span>
-              <span style={{ width: '20%' }}>{log.result}</span>
-              <span style={{ width: '50%' }}>{log.cacheState}</span>
+            <pre className="m-0 flex justify-between w-full">
+              <span className="w-[30%]">{log.action}</span>
+              <span className="w-[20%]">{log.result}</span>
+              <span className="w-[50%]">{log.cacheState}</span>
             </pre>
           </List.Item>
         )}

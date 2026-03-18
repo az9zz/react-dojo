@@ -108,7 +108,7 @@ const HooksTrapExample = () => {
         </Button>
       </Space>
       <Alert
-        message="操作提示：快速点击几次 Increment，然后点击两种打印按钮，观察 alert 的值。"
+        message="操作提示：先点击一种「延迟打印」按钮，然后在 1 秒内快速点击几次 Increment，等待 alert 弹出。「错误方式」显示点击时的旧值，「正确方式」显示最新值。"
         type="info"
       />
     </Space>

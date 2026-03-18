@@ -41,12 +41,10 @@ export const ClosureInLoopComponent = () => {
         dataSource={logs}
         renderItem={(item, index) => (
           <List.Item>
-            <pre
-              style={{ margin: 0 }}
-            >{`[${(index + 1).toString().padStart(2, '0')}] ${item}`}</pre>
+            <pre className="!m-0">{`[${(index + 1).toString().padStart(2, '0')}] ${item}`}</pre>
           </List.Item>
         )}
-        style={{ minHeight: 220 }}
+        className="min-h-[220px]"
       />
     </Card>
   )

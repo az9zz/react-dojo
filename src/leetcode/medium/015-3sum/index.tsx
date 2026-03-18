@@ -52,7 +52,7 @@ export const ThreeSumComponent = () => {
       </Form>
 
       {(result || error) && (
-        <Space direction="vertical" style={{ width: '100%' }}>
+        <Space direction="vertical" className="w-full">
           <Divider>运行结果</Divider>
           {result &&
             (result.length > 0 ? (
