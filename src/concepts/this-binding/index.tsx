@@ -8,8 +8,10 @@ const { Title, Paragraph, Text } = Typography
 // --- 示例一：四种绑定规则 ---
 const BindingRulesExample = () => {
   const [result, setResult] = useState<string[]>([])
+  const [active, setActive] = useState<string | null>(null)
 
   const runDefault = () => {
+    setActive('default')
     const lines: string[] = []
     lines.push('=== 默认绑定 ===')
     lines.push('function foo() { return this }')
@@ -19,6 +21,7 @@ const BindingRulesExample = () => {
   }
 
   const runImplicit = () => {
+    setActive('implicit')
     const obj = {
       name: 'myObj',
       getName() {
@@ -29,12 +32,23 @@ const BindingRulesExample = () => {
     lines.push('=== 隐式绑定 ===')
     lines.push('const obj = { name: "myObj", getName() { return this.name } }')
     lines.push(`obj.getName() → "${obj.getName()}"  // this → obj`)
+
+    // fn() 在严格模式下 this 为 undefined，会抛错 —— 正好演示 this 丢失
     const fn = obj.getName
-    lines.push(`const fn = obj.getName; fn() → "${fn()}"  // ⚠️ this 丢失！`)
+    let fnResult: string
+    try {
+      fnResult = fn()
+    } catch {
+      fnResult = 'TypeError! this 是 undefined'
+    }
+    lines.push(`const fn = obj.getName; fn() → "${fnResult}"  // ⚠️ this 丢失！`)
+    lines.push('')
+    lines.push('💡 将方法赋给变量后调用，隐式绑定丢失，this 变为 undefined（严格模式）。')
     setResult(lines)
   }
 
   const runExplicit = () => {
+    setActive('explicit')
     function greet(this: any, greeting: string) {
       return `${greeting}, ${this.name}`
     }
@@ -50,6 +64,7 @@ const BindingRulesExample = () => {
   }
 
   const runNew = () => {
+    setActive('new')
     function Person(this: any, name: string) {
       this.name = name
     }
@@ -70,12 +85,18 @@ const BindingRulesExample = () => {
         <Tag color="blue">隐式</Tag> {'>'} <Tag>默认</Tag>
       </Paragraph>
       <Space wrap>
-        <Button onClick={runDefault}>默认绑定</Button>
-        <Button onClick={runImplicit}>隐式绑定</Button>
-        <Button type="primary" onClick={runExplicit}>
+        <Button type={active === 'default' ? 'primary' : 'default'} onClick={runDefault}>
+          默认绑定
+        </Button>
+        <Button type={active === 'implicit' ? 'primary' : 'default'} onClick={runImplicit}>
+          隐式绑定
+        </Button>
+        <Button type={active === 'explicit' ? 'primary' : 'default'} onClick={runExplicit}>
           显式绑定
         </Button>
-        <Button onClick={runNew}>new 绑定</Button>
+        <Button type={active === 'new' ? 'primary' : 'default'} onClick={runNew}>
+          new 绑定
+        </Button>
       </Space>
       {result.length > 0 && (
         <pre style={{ background: '#f5f5f5', padding: 12, borderRadius: 6, fontSize: 13 }}>
