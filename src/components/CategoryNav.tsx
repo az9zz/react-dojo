@@ -16,7 +16,7 @@ const CategoryNav = ({ categories, idPrefix = '' }: CategoryNavProps) => {
   }
 
   return (
-    <div className="sticky top-16 z-40 bg-white/80 backdrop-blur-sm py-3 px-1 -mx-1 mb-4 border-b border-gray-100">
+    <div className="sticky top-16 z-40 bg-white/90 backdrop-blur-sm py-3 mb-4 border-b border-gray-200">
       {categories.map((cat) => (
         <Tag
           key={cat}

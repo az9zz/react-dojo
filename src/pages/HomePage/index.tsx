@@ -27,9 +27,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl py-16 px-8 text-center mb-10">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">React Dojo</h1>
-        <p className="text-lg text-gray-500 max-w-xl mx-auto">
+      <div className="bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-2xl py-16 px-8 text-center mb-10 border border-gray-200">
+        <h1 className="text-4xl font-bold text-gray-800 mb-3">React Dojo</h1>
+        <p className="text-base text-gray-400 max-w-md mx-auto">
           我的前端演武场 —— 学习、实践和巩固前端知识的互动平台
         </p>
       </div>
