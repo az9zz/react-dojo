@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, type FC } from 'react'
 import { Card, Button, Typography, Space, Divider, message } from 'antd'
 import { EventEmitter } from './solution'
-import CodeBlock from '../../components/CodeBlock'
+import SolutionCode from '../../components/CodeBlock/SolutionCode'
 import solutionCode from './solution.ts?raw'
 
 const { Paragraph, Text } = Typography
@@ -86,9 +86,7 @@ export const EventEmitterComponent = () => {
         </Button>
         <Button onClick={handleOneTimeBroadcast}>触发一次性事件</Button>
       </Space>
-
-      <Divider>解题代码</Divider>
-      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
+      <SolutionCode code={solutionCode} />
     </Card>
   )
 }

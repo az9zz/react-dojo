@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Radio, Input } from 'antd'
 import { quickSort, mergeSort } from './solution'
-import CodeBlock from '../../../components/CodeBlock'
+import SolutionCode from '../../../components/CodeBlock/SolutionCode'
 import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
@@ -85,9 +85,7 @@ export const SortArrayComponent = () => {
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
-
-      <Divider>解题代码</Divider>
-      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
+      <SolutionCode code={solutionCode} />
     </Card>
   )
 }

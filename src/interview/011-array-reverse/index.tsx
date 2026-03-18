@@ -7,7 +7,7 @@ import {
   reverseWithUnshift,
   reverseInPlace,
 } from './solution'
-import CodeBlock from '../../components/CodeBlock'
+import SolutionCode from '../../components/CodeBlock/SolutionCode'
 import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
@@ -100,9 +100,7 @@ export const ArrayReverseComponent = () => {
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
-
-      <Divider>解题代码</Divider>
-      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
+      <SolutionCode code={solutionCode} />
     </Card>
   )
 }

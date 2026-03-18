@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider, Radio } from 'antd'
 import { deepCloneJSON, deepCloneRecursive, deepCloneFull } from './solution'
 import CodeBlock from '../../components/CodeBlock'
+import SolutionCode from '../../components/CodeBlock/SolutionCode'
 import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
@@ -120,9 +121,7 @@ export const DeepCloneComponent = () => {
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
-
-      <Divider>解题代码</Divider>
-      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
+      <SolutionCode code={solutionCode} />
     </Card>
   )
 }

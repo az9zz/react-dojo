@@ -2,7 +2,7 @@
 import { useState, useMemo, type FC } from 'react'
 import { Card, Typography, Space, Divider, Alert, Statistic } from 'antd'
 import { debounce, throttle } from './solution'
-import CodeBlock from '../../components/CodeBlock'
+import SolutionCode from '../../components/CodeBlock/SolutionCode'
 import solutionCode from './solution.ts?raw'
 
 const { Paragraph, Title } = Typography
@@ -56,9 +56,7 @@ export const DebounceThrottleComponent = () => {
           count={throttleCount}
         />
       </Space>
-
-      <Divider>解题代码</Divider>
-      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
+      <SolutionCode code={solutionCode} />
     </Card>
   )
 }

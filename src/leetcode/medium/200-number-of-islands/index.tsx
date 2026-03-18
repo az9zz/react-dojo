@@ -2,7 +2,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Card, Button, Typography, Space, Divider, Alert } from 'antd'
 import { numIslands } from './solution'
-import CodeBlock from '../../../components/CodeBlock'
+import SolutionCode from '../../../components/CodeBlock/SolutionCode'
 import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
@@ -69,9 +69,7 @@ export const NumIslandsComponent = () => {
 
       <Divider>计算结果</Divider>
       <Alert message={`当前岛屿数量: ${islandCount}`} type="success" showIcon />
-
-      <Divider>解题代码</Divider>
-      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
+      <SolutionCode code={solutionCode} />
     </Card>
   )
 }

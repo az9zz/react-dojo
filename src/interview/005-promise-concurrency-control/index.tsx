@@ -13,7 +13,7 @@ import {
   Alert,
 } from 'antd'
 import { promisePool } from './solution'
-import CodeBlock from '../../components/CodeBlock'
+import SolutionCode from '../../components/CodeBlock/SolutionCode'
 import solutionCode from './solution.ts?raw'
 
 const { Paragraph, Text } = Typography
@@ -150,9 +150,7 @@ export const PromisePoolComponent = () => {
           showIcon
         />
       )}
-
-      <Divider>解题代码</Divider>
-      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
+      <SolutionCode code={solutionCode} />
     </Card>
   )
 }

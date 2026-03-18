@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Input, List } from 'antd'
 import { threeSum } from './solution'
-import CodeBlock from '../../../components/CodeBlock'
+import SolutionCode from '../../../components/CodeBlock/SolutionCode'
 import solutionCode from './solution.ts?raw'
 
 const { Paragraph } = Typography
@@ -69,9 +69,7 @@ export const ThreeSumComponent = () => {
           {error && <Alert message={error} type="error" showIcon />}
         </Space>
       )}
-
-      <Divider>解题代码</Divider>
-      <CodeBlock language="typescript">{solutionCode}</CodeBlock>
+      <SolutionCode code={solutionCode} />
     </Card>
   )
 }
