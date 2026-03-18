@@ -1,12 +1,12 @@
 // src/leetcode/medium/056-merge-intervals/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { merge } from './solution'
 
 const { Paragraph } = Typography
 const { TextArea } = Input
 
-export const MergeIntervalsComponent: React.FC = () => {
+export const MergeIntervalsComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number[][] | null>(null)
   const [error, setError] = useState<string>('')

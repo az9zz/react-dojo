@@ -1,5 +1,5 @@
 // src/leetcode/easy/094-binary-tree-traversal/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Input, List } from 'antd'
 import {
   // TreeNode,
@@ -33,7 +33,7 @@ const traversalFunctions = {
   },
 }
 
-export const TreeTraversalComponent: React.FC = () => {
+export const TreeTraversalComponent = () => {
   const [form] = Form.useForm()
   const [results, setResults] = useState<{ [key: string]: number[] }>({})
   const [error, setError] = useState<string>('')

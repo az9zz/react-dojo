@@ -1,43 +1,28 @@
-// src/pages/InterviewPage/index.tsx
-import React from 'react'
-import { Typography, Divider } from 'antd'
-import { ArrayFlattenComponent } from '../../interview/001-array-flatten' // 1. 导入新组件
-import { FunctionCurryingComponent } from '../../interview/002-function-curryin'
-import { DeepCloneComponent } from '../../interview/003-deep-clone'
-import { EventEmitterComponent } from '../../interview/004-event-emitter'
-import { PromisePoolComponent } from '../../interview/005-promise-concurrency-control'
-import { SortVersionsComponent } from '../../interview/006-sort-version-numbers'
-import { DebounceThrottleComponent } from '../../interview/008-debounce-throttle'
-import { ClosureInLoopComponent } from '../../interview/009-closure-in-loop'
-import { ArrayToTreeComponent } from '../../interview/010-array-to-tree'
-import { ArrayReverseComponent } from '../../interview/011-array-reverse'
+import { Typography, Divider, Flex } from 'antd'
+import { interviewRegistry } from '@/interview/registry'
 
 const { Title } = Typography
 
-const InterviewPage: React.FC = () => {
+const categories = ['JavaScript 基础', 'JavaScript 异步与流程控制', 'JavaScript 性能优化']
+
+const InterviewPage = () => {
   return (
     <div>
       <Title level={2}>前端面试题实践</Title>
-      <Divider orientation="left">JavaScript 基础</Divider>
-      <ArrayFlattenComponent /> {/* 2. 添加新组件 */}
-      <div style={{ marginTop: '24px' }} />
-      <FunctionCurryingComponent />
-      <div style={{ marginTop: '24px' }} />
-      <DeepCloneComponent />
-      <div style={{ marginTop: '24px' }} />
-      <EventEmitterComponent />
-      <div style={{ marginTop: '24px' }} />
-      <SortVersionsComponent />
-      <div style={{ marginTop: '24px' }} />
-      <ClosureInLoopComponent />
-      <div style={{ marginTop: '24px' }} />
-      <ArrayToTreeComponent />
-      <div style={{ marginTop: '24px' }} />
-      <ArrayReverseComponent />
-      <Divider orientation="left">JavaScript 异步与流程控制</Divider>
-      <PromisePoolComponent />
-      <Divider orientation="left">JavaScript 性能优化</Divider>
-      <DebounceThrottleComponent />
+      {categories.map((cat) => {
+        const entries = interviewRegistry.filter((e) => e.category === cat)
+        if (entries.length === 0) return null
+        return (
+          <div key={cat}>
+            <Divider orientation="left">{cat}</Divider>
+            <Flex vertical gap={24}>
+              {entries.map((entry) => (
+                <entry.component key={entry.id} />
+              ))}
+            </Flex>
+          </div>
+        )
+      })}
     </div>
   )
 }

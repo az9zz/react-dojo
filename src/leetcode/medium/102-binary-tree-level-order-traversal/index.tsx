@@ -1,5 +1,5 @@
 // src/leetcode/medium/102-binary-tree-level-order-traversal/index.tsx
-import React, { useState } from 'react'
+import { useState, type FC } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Input } from 'antd'
 import { TreeNode, arrayToTree, levelOrder } from './solution'
 
@@ -7,7 +7,7 @@ const { Paragraph } = Typography
 const { TextArea } = Input
 
 // 一个简单的组件来递归渲染树
-const TreeVisualizer: React.FC<{ node: TreeNode | null }> = ({ node }) => {
+const TreeVisualizer: FC<{ node: TreeNode | null }> = ({ node }) => {
   if (!node) {
     return null
   }
@@ -38,7 +38,7 @@ const TreeVisualizer: React.FC<{ node: TreeNode | null }> = ({ node }) => {
   )
 }
 
-export const LevelOrderTraversalComponent: React.FC = () => {
+export const LevelOrderTraversalComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number[][] | null>(null)
   const [treeRoot, setTreeRoot] = useState<TreeNode | null>(null)

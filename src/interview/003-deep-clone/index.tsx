@@ -1,5 +1,5 @@
 // src/interview/002-deep-clone/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider, Radio } from 'antd'
 import { deepCloneJSON, deepCloneRecursive, deepCloneFull } from './solution'
 
@@ -29,7 +29,7 @@ const initialObjectString = `
 })()
 `
 
-export const DeepCloneComponent: React.FC = () => {
+export const DeepCloneComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<string>('')
   const [error, setError] = useState<string>('')

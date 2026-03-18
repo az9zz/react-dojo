@@ -1,5 +1,5 @@
 // src/interview/008-array-to-tree/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Radio, Tree, Input } from 'antd'
 import { type TreeNode, arrayToTreeByMap, arrayToTreeByRecursion } from './solution'
 import type { DataNode } from 'antd/es/tree'
@@ -27,7 +27,7 @@ function convertToDataNode(nodes: TreeNode[]): DataNode[] {
   }))
 }
 
-export const ArrayToTreeComponent: React.FC = () => {
+export const ArrayToTreeComponent = () => {
   const [form] = Form.useForm()
   const [treeData, setTreeData] = useState<DataNode[] | null>(null)
   const [error, setError] = useState<string>('')

@@ -1,5 +1,5 @@
 // src/leetcode/easy/206-reverse-linked-list/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { ListNode, reverseList } from './solution'
 
@@ -29,7 +29,7 @@ const listToArray = (head: ListNode | null): number[] => {
   return arr
 }
 
-export const ReverseListComponent: React.FC = () => {
+export const ReverseListComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number[] | null>(null)
   const [error, setError] = useState<string>('')

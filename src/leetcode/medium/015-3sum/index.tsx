@@ -1,12 +1,12 @@
 // src/leetcode/medium/015-3sum/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Input, List } from 'antd'
 import { threeSum } from './solution'
 
 const { Paragraph } = Typography
 const { TextArea } = Input
 
-export const ThreeSumComponent: React.FC = () => {
+export const ThreeSumComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number[][] | null>(null)
   const [error, setError] = useState<string>('')

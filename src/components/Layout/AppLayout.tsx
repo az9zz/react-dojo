@@ -1,25 +1,49 @@
-// src/components/layout/AppLayout.tsx
-import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
-import { Layout, Menu } from 'antd'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
+import { Layout, Button, Space, Typography } from 'antd'
 
 const { Header, Content, Footer } = Layout
+const { Title } = Typography
 
-const items = [
-  { key: '/', label: <Link to="/">首页</Link> },
-  { key: '/concepts', label: <Link to="/concepts">知识点练习</Link> },
-  { key: '/leetcode', label: <Link to="/leetcode">LeetCode</Link> },
-  { key: '/interview', label: <Link to="/interview">面试题</Link> },
+const navItems = [
+  { key: '/', label: '首页' },
+  { key: '/concepts', label: '知识点练习' },
+  { key: '/leetcode', label: 'LeetCode' },
+  { key: '/interview', label: '面试题' },
 ]
 
-const AppLayout: React.FC = () => {
+const AppLayout = () => {
+  const location = useLocation()
+  const navigate = useNavigate()
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Header>
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['/']} items={items} />
+      <Header
+        style={{
+          background: '#fff',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '0 48px',
+          borderBottom: '1px solid #f0f0f0',
+        }}
+      >
+        <Title level={4} style={{ margin: 0, cursor: 'pointer' }} onClick={() => navigate('/')}>
+          React Dojo
+        </Title>
+        <Space>
+          {navItems.map((item) => (
+            <Button
+              key={item.key}
+              type={location.pathname === item.key ? 'primary' : 'text'}
+              onClick={() => navigate(item.key)}
+            >
+              {item.label}
+            </Button>
+          ))}
+        </Space>
       </Header>
       <Content style={{ padding: '24px 48px' }}>
-        <Outlet /> {/* 子路由的页面会在这里渲染 */}
+        <Outlet />
       </Content>
       <Footer style={{ textAlign: 'center' }}>
         React Dojo ©{new Date().getFullYear()} Created by You

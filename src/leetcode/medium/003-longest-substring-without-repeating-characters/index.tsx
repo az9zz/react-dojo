@@ -1,11 +1,11 @@
 // src/leetcode/medium/003-longest-substring-without-repeating-characters/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { lengthOfLongestSubstring } from './solution'
 
 const { Paragraph } = Typography
 
-export const LongestSubstringComponent: React.FC = () => {
+export const LongestSubstringComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number | null>(null)
 

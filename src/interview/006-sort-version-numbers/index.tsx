@@ -1,5 +1,5 @@
 // src/interview/005-sort-version-numbers/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, List, Input } from 'antd'
 import { sortVersionNumbers } from './solution'
 
@@ -17,7 +17,7 @@ const initialVersions = [
   '1.0.0-alpha', // sort 会把这个放在前面
 ].join('\n')
 
-export const SortVersionsComponent: React.FC = () => {
+export const SortVersionsComponent = () => {
   const [form] = Form.useForm()
   const [sorted, setSorted] = useState<string[] | null>(null)
   const [error, setError] = useState<string>('')

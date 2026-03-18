@@ -1,11 +1,11 @@
 // src/interview/007-closure-in-loop/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Space, Divider, List } from 'antd'
 import { runProblematic, runWithLet, runWithIIFE, runWithSetTimeoutArg } from './solution'
 
 const { Paragraph } = Typography
 
-export const ClosureInLoopComponent: React.FC = () => {
+export const ClosureInLoopComponent = () => {
   const [logs, setLogs] = useState<string[]>([])
 
   const startTest = (runner: (log: (msg: string | number) => void) => void) => {

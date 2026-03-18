@@ -1,5 +1,5 @@
 // src/interview/004-promise-concurrency-control/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
   Card,
   Button,
@@ -24,7 +24,7 @@ interface TaskLog {
   endTime?: number
 }
 
-export const PromisePoolComponent: React.FC = () => {
+export const PromisePoolComponent = () => {
   const [poolLimit, setPoolLimit] = useState(3)
   const [taskCount, setTaskCount] = useState(10)
   const [isRunning, setIsRunning] = useState(false)

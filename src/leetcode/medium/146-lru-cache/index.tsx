@@ -1,5 +1,5 @@
 // src/leetcode/medium/146-lru-cache/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Space, Divider, InputNumber, List, Radio } from 'antd'
 import { LRUCache } from './solution'
 
@@ -16,7 +16,7 @@ interface Log {
   cacheState: string
 }
 
-export const LRUCacheComponent: React.FC = () => {
+export const LRUCacheComponent = () => {
   const [capacity, setCapacity] = useState(2)
   const [actions, setActions] = useState<Action[]>([
     { type: 'put', key: 1, value: 1 },

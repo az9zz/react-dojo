@@ -1,5 +1,5 @@
 // src/leetcode/medium/647-palindromic-substrings/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Radio, Input } from 'antd'
 import { countSubstrings_DP, countSubstrings_CenterExpand } from './solution'
 
@@ -7,7 +7,7 @@ const { Paragraph } = Typography
 
 type Method = 'DP' | 'CenterExpand'
 
-export const PalindromicSubstringsComponent: React.FC = () => {
+export const PalindromicSubstringsComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number | null>(null)
   const [method, setMethod] = useState<Method>('CenterExpand')

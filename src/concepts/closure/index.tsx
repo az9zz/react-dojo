@@ -1,5 +1,5 @@
 // src/concepts/closure/index.tsx
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { Card, Button, Typography, Space, Divider, Alert, Statistic } from 'antd'
 const { Title, Paragraph, Text } = Typography
 // --- 示例一：计数器 (私有变量) ---
@@ -15,7 +15,7 @@ const createCounter = () => {
     getCount: () => count,
   }
 }
-const CounterExample: React.FC = () => {
+const CounterExample = () => {
   // 使用 useMemo 来确保 counter 实例在组件生命周期内是唯一的
   const counter = useMemo(() => createCounter(), [])
   const [displayCount, setDisplayCount] = useState(counter.getCount())
@@ -54,7 +54,7 @@ const add = (x: number) => {
   // 返回的这个函数是一个闭包，它记住了 x
   return (y: number) => x + y
 }
-const CurryingExample: React.FC = () => {
+const CurryingExample = () => {
   const add5 = useMemo(() => add(5), [])
   const add10 = useMemo(() => add(10), [])
   return (
@@ -72,7 +72,7 @@ const CurryingExample: React.FC = () => {
   )
 }
 // --- 示例三：React Hooks 中的闭包陷阱与正确用法 ---
-const HooksTrapExample: React.FC = () => {
+const HooksTrapExample = () => {
   const [count, setCount] = useState(0)
   const logCountWrong = () => {
     // 这个 setTimeout 的回调是一个闭包，它捕获了 logCountWrong 被创建时
@@ -114,7 +114,7 @@ const HooksTrapExample: React.FC = () => {
     </Space>
   )
 }
-export const ClosureConceptComponent: React.FC = () => {
+export const ClosureConceptComponent = () => {
   return (
     <Card title="核心概念: 闭包 (Closure)">
       <Title level={4}>示例一：创建私有变量</Title>

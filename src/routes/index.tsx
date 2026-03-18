@@ -1,31 +1,55 @@
-// src/routes/index.tsx
+import { lazy, Suspense, type ReactNode } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AppLayout from '../components/Layout/AppLayout' // 我们创建一个布局组件
-import HomePage from '../pages/HomePage'
-import LeetCodePage from '../pages/LeetCodePage'
-import ConceptsPage from '../pages/ConceptsPage'
-import InterviewPage from '../pages/InterviewPage'
+import { Spin } from 'antd'
+import AppLayout from '@/components/Layout/AppLayout'
+
+const HomePage = lazy(() => import('@/pages/HomePage'))
+const LeetCodePage = lazy(() => import('@/pages/LeetCodePage'))
+const ConceptsPage = lazy(() => import('@/pages/ConceptsPage'))
+const InterviewPage = lazy(() => import('@/pages/InterviewPage'))
+
+const LazyPage = ({ children }: { children: ReactNode }) => (
+  <Suspense fallback={<Spin size="large" style={{ display: 'block', margin: '120px auto' }} />}>
+    {children}
+  </Suspense>
+)
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <AppLayout />, // 使用布局组件
+    element: <AppLayout />,
     children: [
       {
-        index: true, // 默认子路由
-        element: <HomePage />,
+        index: true,
+        element: (
+          <LazyPage>
+            <HomePage />
+          </LazyPage>
+        ),
       },
       {
         path: 'leetcode',
-        element: <LeetCodePage />,
+        element: (
+          <LazyPage>
+            <LeetCodePage />
+          </LazyPage>
+        ),
       },
       {
         path: 'concepts',
-        element: <ConceptsPage />,
+        element: (
+          <LazyPage>
+            <ConceptsPage />
+          </LazyPage>
+        ),
       },
       {
         path: 'interview',
-        element: <InterviewPage />,
+        element: (
+          <LazyPage>
+            <InterviewPage />
+          </LazyPage>
+        ),
       },
     ],
   },

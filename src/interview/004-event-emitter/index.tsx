@@ -1,5 +1,5 @@
 // src/interview/003-event-emitter/index.tsx
-import React, { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, type FC } from 'react'
 import { Card, Button, Typography, Space, Divider, message } from 'antd'
 import { EventEmitter } from './solution'
 
@@ -9,7 +9,7 @@ const { Paragraph, Text } = Typography
 const eventBus = new EventEmitter()
 
 // 模拟一个独立的组件
-const SubscriberComponent: React.FC<{ id: number }> = ({ id }) => {
+const SubscriberComponent: FC<{ id: number }> = ({ id }) => {
   const [lastMessage, setLastMessage] = useState<string>('还未收到消息')
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const SubscriberComponent: React.FC<{ id: number }> = ({ id }) => {
   )
 }
 
-export const EventEmitterComponent: React.FC = () => {
+export const EventEmitterComponent = () => {
   const broadcastCount = useRef(0)
 
   const handleBroadcast = () => {

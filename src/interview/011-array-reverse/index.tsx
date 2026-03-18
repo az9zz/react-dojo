@@ -1,5 +1,5 @@
 // src/interview/009-array-reverse/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Radio, Input } from 'antd'
 import {
   reverseWithNative,
@@ -12,7 +12,7 @@ const { Paragraph } = Typography
 
 type Method = 'Native' | 'NewArray' | 'Unshift' | 'InPlace'
 
-export const ArrayReverseComponent: React.FC = () => {
+export const ArrayReverseComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<unknown[] | null>(null)
   const [original, setOriginal] = useState<unknown[]>([])

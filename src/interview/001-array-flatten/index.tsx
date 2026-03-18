@@ -1,5 +1,5 @@
 // src/interview/001-array-flatten/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {
   Card,
   Input,
@@ -29,7 +29,7 @@ const { TextArea } = Input
 
 type Method = 'Flat' | 'Recursion' | 'Reduce' | 'Stack' | 'ToString'
 
-export const ArrayFlattenComponent: React.FC = () => {
+export const ArrayFlattenComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<unknown[] | null>(null)
   const [error, setError] = useState<string>('')

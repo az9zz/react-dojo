@@ -1,5 +1,5 @@
 // src/leetcode/medium/200-number-of-islands/index.tsx
-import React, { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { Card, Button, Typography, Space, Divider, Alert } from 'antd'
 import { numIslands } from './solution'
 
@@ -12,7 +12,7 @@ const initialGrid = [
   ['0', '0', '0', '1', '1'],
 ]
 
-export const NumIslandsComponent: React.FC = () => {
+export const NumIslandsComponent = () => {
   const [grid, setGrid] = useState<string[][]>(initialGrid.map((row) => [...row]))
   const [islandCount, setIslandCount] = useState(0)
 

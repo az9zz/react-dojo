@@ -1,5 +1,4 @@
 // src/pages/HomePage/index.tsx
-import React from 'react'
 import { Card, Typography, List } from 'antd'
 import { Link } from 'react-router-dom'
 
@@ -15,7 +14,7 @@ const features = [
   { title: '前端面试题实践', path: '/interview', description: '复现经典前端面试题。' },
 ]
 
-const HomePage: React.FC = () => {
+const HomePage = () => {
   return (
     <div>
       <Title level={2}>React Dojo - 我的前端演武场</Title>

@@ -1,11 +1,11 @@
 // src/interview/006-debounce-throttle/index.tsx
-import React, { useState, useMemo } from 'react'
+import { useState, useMemo, type FC } from 'react'
 import { Card, Typography, Space, Divider, Alert, Statistic } from 'antd'
 import { debounce, throttle } from './solution'
 
 const { Paragraph, Title } = Typography
 
-const DemoBox: React.FC<{ title: string; onMouseMove: () => void; count: number }> = ({
+const DemoBox: FC<{ title: string; onMouseMove: () => void; count: number }> = ({
   title,
   onMouseMove,
   count,
@@ -28,7 +28,7 @@ const DemoBox: React.FC<{ title: string; onMouseMove: () => void; count: number 
   </div>
 )
 
-export const DebounceThrottleComponent: React.FC = () => {
+export const DebounceThrottleComponent = () => {
   const [rawCount, setRawCount] = useState(0)
   const [debounceCount, setDebounceCount] = useState(0)
   const [throttleCount, setThrottleCount] = useState(0)

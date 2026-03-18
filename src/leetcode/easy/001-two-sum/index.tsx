@@ -1,11 +1,11 @@
 // src/leetcode/easy/001-two-sum/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { twoSum } from './solution' // 导入核心算法
 
 const { Paragraph } = Typography
 
-export const TwoSumComponent: React.FC = () => {
+export const TwoSumComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number[] | null>(null)
   const [error, setError] = useState<string>('')

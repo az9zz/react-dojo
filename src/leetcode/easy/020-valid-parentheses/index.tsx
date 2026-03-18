@@ -1,11 +1,11 @@
 // src/leetcode/easy/020-valid-parentheses/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Input } from 'antd'
 import { isValid } from './solution'
 
 const { Paragraph } = Typography
 
-export const ValidParenthesesComponent: React.FC = () => {
+export const ValidParenthesesComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<boolean | null>(null)
 

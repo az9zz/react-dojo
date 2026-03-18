@@ -1,11 +1,11 @@
 // src/leetcode/easy/141-linked-list-cycle/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Input, InputNumber, Button, Typography, Form, Alert, Space, Divider } from 'antd'
 import { hasCycle, createLinkedListWithCycle } from './solution'
 
 const { Paragraph } = Typography
 
-export const LinkedListCycleComponent: React.FC = () => {
+export const LinkedListCycleComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<boolean | null>(null)
   const [error, setError] = useState<string>('')

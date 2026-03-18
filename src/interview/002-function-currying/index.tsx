@@ -1,5 +1,5 @@
 // src/interview/002-function-currying/index.tsx
-import React, { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { Card, Input, Button, Typography, Space, Divider, Alert, Tag } from 'antd'
 import { curry } from './solution'
 
@@ -11,7 +11,7 @@ type GenericFunction = (...args: any[]) => any
 // 一个简单的示例函数
 const originalAdd = (a: number, b: number, c: number): number => a + b + c
 
-export const FunctionCurryingComponent: React.FC = () => {
+export const FunctionCurryingComponent = () => {
   const [curriedFn, setCurriedFn] = useState<GenericFunction | null>(null)
   const [collectedArgs, setCollectedArgs] = useState<number[]>([])
   const [inputValue, setInputValue] = useState<string>('1')

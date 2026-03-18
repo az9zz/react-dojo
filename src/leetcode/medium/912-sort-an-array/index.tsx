@@ -1,5 +1,5 @@
 // src/leetcode/medium/912-sort-an-array/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Radio, Input } from 'antd'
 import { quickSort, mergeSort } from './solution'
 
@@ -8,7 +8,7 @@ const { TextArea } = Input
 
 type Method = 'QuickSort' | 'MergeSort'
 
-export const SortArrayComponent: React.FC = () => {
+export const SortArrayComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<string>('')
   const [error, setError] = useState<string>('')

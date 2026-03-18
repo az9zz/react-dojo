@@ -1,22 +1,27 @@
-// src/pages/ConceptsPage/index.tsx
-import React from 'react'
-import { Typography, Divider } from 'antd'
-import { ClosureConceptComponent } from '../../concepts/closure'
-// 之后你会在这里引入具体的知识点练习组件
-// import UseStateExample from '../../concepts/hooks/UseStateExample';
+import { Typography, Divider, Flex } from 'antd'
+import { conceptsRegistry } from '@/concepts/registry'
 
 const { Title } = Typography
 
-const ConceptsPage: React.FC = () => {
+const ConceptsPage = () => {
+  const categories = [...new Set(conceptsRegistry.map((e) => e.category))]
+
   return (
     <div>
-      <Title level={2}>React 核心知识点</Title>
-      <Divider orientation="left">JavaScript 核心概念</Divider>
-      <ClosureConceptComponent />
-
-      {/* 之后每学习一个知识点，就在这里添加一个练习组件 */}
-      {/* <Divider orientation="left">useState</Divider> */}
-      {/* <UseStateExample /> */}
+      <Title level={2}>核心知识点</Title>
+      {categories.map((cat) => {
+        const entries = conceptsRegistry.filter((e) => e.category === cat)
+        return (
+          <div key={cat}>
+            <Divider orientation="left">{cat}</Divider>
+            <Flex vertical gap={24}>
+              {entries.map((entry) => (
+                <entry.component key={entry.id} />
+              ))}
+            </Flex>
+          </div>
+        )
+      })}
     </div>
   )
 }

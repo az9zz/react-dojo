@@ -1,5 +1,5 @@
 // src/leetcode/medium/300-longest-increasing-subsequence/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Input, Button, Typography, Form, Alert, Space, Divider, Radio } from 'antd'
 import { lengthOfLIS_DP, lengthOfLIS_Greedy } from './solution'
 
@@ -7,7 +7,7 @@ const { Paragraph } = Typography
 
 type Method = 'DP' | 'Greedy'
 
-export const LISComponent: React.FC = () => {
+export const LISComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number | null>(null)
   const [error, setError] = useState<string>('')

@@ -1,11 +1,11 @@
 // src/leetcode/easy/021-merge-two-sorted-lists/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Space, Divider, Input } from 'antd'
 import { arrayToList, listToArray, mergeTwoLists, mergeSortedArray } from './solution'
 
 const { Title } = Typography
 
-export const MergeSortedComponent: React.FC = () => {
+export const MergeSortedComponent = () => {
   const [form] = Form.useForm()
   const [listResult, setListResult] = useState<number[] | null>(null)
   const [arrayResult, setArrayResult] = useState<number[] | null>(null)

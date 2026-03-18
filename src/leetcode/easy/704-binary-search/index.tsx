@@ -1,5 +1,5 @@
 // src/leetcode/easy/704-binary-search/index.tsx
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Card, Button, Typography, Form, Alert, Divider, InputNumber, Tag } from 'antd'
 // import { binarySearch_closed } from './solution'
 
@@ -14,7 +14,7 @@ interface Step {
 
 const sortedArray = Array.from({ length: 20 }, (_, i) => i * 3 - 20) // [-20, -17, ..., 37]
 
-export const BinarySearchComponent: React.FC = () => {
+export const BinarySearchComponent = () => {
   const [form] = Form.useForm()
   const [result, setResult] = useState<number | null>(null)
   const [searchSteps, setSearchSteps] = useState<Step[]>([])
